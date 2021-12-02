@@ -1,7 +1,7 @@
 <#
     ** ADVENT OF CODE 02021 **
     **   DAY 1 - PUZZLE 1   **
-    **      DARK-COFFEE     **
+    **     DARK-COFFEE      **
 #>
 
 $challengeInput = "157
