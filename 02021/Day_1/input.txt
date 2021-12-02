@@ -1,10 +1,4 @@
-<#
-    ** ADVENT OF CODE 02021 **
-    **   DAY 1 - PUZZLE 2   **
-    **     DARK-COFFEE      **
-#>
-
-$challengeInput = "157
+157
 148
 149
 146
@@ -2003,30 +1997,4 @@ $challengeInput = "157
 8010
 8016
 8020
-8026"
-
-$challengeFormatted = $challengeInput.Split("`n")
-
-$counter = 0
-$arrayPosition = 0
-
-$previousSum = 0
-
-foreach ($measurement in $challengeFormatted){
-
-    [int]$measurement1 = $measurement
-    [int]$measurement2 = $challengeFormatted[($arrayPosition +1)]
-    [int]$measurement3 = $challengeFormatted[($arrayPosition +2)]
-    [int]$sum = $($measurement1) + $($measurement2) + $($measurement3)
-    
-    if($arrayPosition -eq 0){
-        #do nothing 
-    }elseif($sum -gt $previousSum){
-        $counter = $counter + 1
-    }
-
-    $arrayPosition = $arrayPosition + 1
-    $previousSum = $sum
-}
-    
-Write-Output "Final Count: $counter"
+8026

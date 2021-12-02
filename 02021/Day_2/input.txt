@@ -1,10 +1,4 @@
-<#
-    ** ADVENT OF CODE 02021 **
-    **   DAY 2 - PUZZLE 1   **
-    **     DARK-COFFEE      **
-#>
-
-$challengeInput = "forward 7
+forward 7
 forward 9
 forward 9
 down 3
@@ -1003,41 +997,4 @@ forward 9
 forward 2
 forward 1
 forward 7
-forward 5"
-
-$challengeFormatted = $challengeInput.Split("`n")
-
-[int]$horizontalPosition = 0
-[int]$verticalPosition = 0
-[int]$combinedAxis = 0
-
-foreach($navigation in $challengeFormatted){
-    [string]$direction = $navigation -replace '\s.*'
-    [int]$distance = $navigation -replace '.*\s'
-
-    if($direction -eq 'forward'){
-        $horizontalPosition = $horizontalPosition + $distance
-    }elseif($direction -eq 'up'){
-        $verticalPosition = $verticalPosition - $distance
-    }elseif($direction -eq 'down'){
-        $verticalPosition = $verticalPosition + $distance
-    }else{
-        Write-Warning 'Something has gone horribly wrong.'
-    }
-}
-
-$combinedAxis = $horizontalPosition * $verticalPosition
-
-# Print Output
-Clear-Host
-Write-Output "*******************************"
-Write-Output "Advent of Code: Day 2, Puzzle 1"
-Write-Output "*******************************"
-Write-Output ""
-Write-Output "SUBMARINE POSITIONING DATA:"
-Write-Output "---------------------------"
-Write-Output "DISTANCE: $($horizontalPosition)"
-Write-Output "   DEPTH: $($verticalPosition)"
-Write-Output "COMBINED: $($combinedAxis)"
-Write-Output "---------------------------"
-Write-Output "TRANSMISSION END."
+forward 5
