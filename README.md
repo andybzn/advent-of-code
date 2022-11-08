@@ -1,6 +1,6 @@
-# AdventOfCode
+# Advent of Code
 
-Solutions for [AdventOfCode](https://adventofcode.com), organized by year, language, then day.  
+Solutions for [Advent of Code](https://adventofcode.com), organized by year, language, then day.  
 
 Each day folder contains:
 - the prompt for the puzzle (README.md)
