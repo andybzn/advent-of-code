@@ -14,7 +14,7 @@ Each "day_x" folder contains:
 
 | Year  | Stars  |
 |:-----:|:------:|
-| 02015 | ⭐ (4) |
+| 02015 | ⭐ (6) |
 | 02016 | (0)    |
 | 02017 | (0)    |
 | 02018 | (0)    |
@@ -23,4 +23,4 @@ Each "day_x" folder contains:
 | 02021 | ⭐ (5) |
 | 02022 | (0)    |
 
-**Total Stars**: 9
+**Total Stars**: 11
