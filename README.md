@@ -21,6 +21,6 @@ Each "day_x" folder contains:
 | 02019 | (0)     |
 | 02020 | (0)     |
 | 02021 | ⭐ (5)  |
-| 02022 | ⭐ (2)  |
+| 02022 | ⭐ (4)  |
 
-**Total Stars**: 19
+**Total Stars**: 21
