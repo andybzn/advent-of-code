@@ -1,6 +1,6 @@
 # Advent of Code
 
-Solutions for [Advent of Code](https://adventofcode.com), organized by year, language, then day.  
+Solutions for [Advent of Code](https://adventofcode.com), organized by year, then day.  
 
 ## Folder Structure
 
@@ -8,7 +8,6 @@ Each "day_x" folder contains:
 
 - The challenge prompt for the puzzle (README.md)
 - Puzzle solution file / package
-- A text file containing the input provided for the challenge (input.txt)
 
 ## ⭐ Star Tracker ⭐
 
@@ -21,6 +20,6 @@ Each "day_x" folder contains:
 | 02019 | (0)     |
 | 02020 | (0)     |
 | 02021 | ⭐ (5)  |
-| 02022 | ⭐ (10)  |
+| 02022 | ⭐ (12) |
 
-**Total Stars**: 27
+**Total Stars**: 29
