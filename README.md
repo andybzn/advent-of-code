@@ -1,6 +1,6 @@
 # Advent of Code
 
-Solutions for [Advent of Code](https://adventofcode.com), organized by year, then day.  
+Solutions for [Advent of Code](https://adventofcode.com), organized by year, language, then day.  
 
 ## Folder Structure
 
