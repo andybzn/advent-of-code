@@ -2,7 +2,7 @@ import { readInput } from './helpers/readFile.mjs'
 import { handleAnswer } from './helpers/parseAnswer.mjs'
 
 function partOne (input) {
-  const partOneStart = process.hrtime.bigint()
+  let clock = process.hrtime.bigint()
   let floorNumber = 0
 
   input.forEach(floor => {
@@ -15,17 +15,17 @@ function partOne (input) {
     }
   })
 
-  const partOneClock = ((process.hrtime.bigint()) - partOneStart)
+  clock = ((process.hrtime.bigint()) - clock)
   const result = {
     answer: floorNumber,
-    time: partOneClock
+    time: clock
   }
 
   return result
 }
 
 function partTwo (input) {
-  const partTwoStart = process.hrtime.bigint()
+  let clock = process.hrtime.bigint()
   let floorNumber = 0
   let basement = false
   let basementPosition = 1
@@ -49,11 +49,10 @@ function partTwo (input) {
     }
   })
 
-  const partTwoClock = ((process.hrtime.bigint()) - partTwoStart)
-
+  clock = ((process.hrtime.bigint()) - clock)
   const result = {
     answer: basementPosition,
-    time: partTwoClock
+    time: clock
   }
 
   return result
