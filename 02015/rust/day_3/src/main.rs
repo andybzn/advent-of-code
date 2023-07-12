@@ -1,76 +1,45 @@
-// imports
-use std::io::Error;
 use std::fs;
 
-// main
-fn main() -> Result<(), Error> {
+fn main() {
+    // parse input
+    let input = fs::read_to_string("input.txt").expect("Couldn't read file");
+    let input: Vec<char> = input.chars().collect();
 
-    // parse the input
-    let input = fs::read_to_string("input.txt")?;
-    let input: Vec<char> = input.chars().collect(); // split to a char array
-
-    // counters & vectors
     let mut move_count: i16 = 0;
-    let mut regular_santa: Vec<[i16; 2]> = Vec::new();
-    let mut robot_santa: Vec<[i16; 2]> = Vec::new();
+    let mut regular_santa: Vec<(i16, i16)> = vec![(0, 0)];
+    let mut robot_santa: Vec<(i16, i16)> = vec![(0, 0)];
 
-    // prime vectors
-    regular_santa.push([0,0]);
-    robot_santa.push([0,0]);
-
-    // logic
     for direction in input {
-
         if move_count % 2 == 0 {
-          // regular_santa
-          let reg_v: i16 = regular_santa.last().unwrap()[0];
-          let reg_h: i16 = regular_santa.last().unwrap()[1];
-          let new_coords: (i16, i16) = navigate(reg_v, reg_h, direction);
-          regular_santa.push([new_coords.0, new_coords.1]);
+            let coords: (i16, i16) = get_coords(&regular_santa);
+            regular_santa.push(navigate(coords.0, coords.1, direction));
         } else {
-          // robo santa
-          let robo_v: i16 = robot_santa.last().unwrap()[0];
-          let robo_h: i16 = robot_santa.last().unwrap()[1];
-          let new_coords: (i16, i16) = navigate(robo_v, robo_h, direction);
-          robot_santa.push([new_coords.0, new_coords.1]);
+            let coords: (i16, i16) = get_coords(&robot_santa);
+            robot_santa.push(navigate(coords.0, coords.1, direction));
         };
-
-        // track moves
         move_count += 1;
-    };
+    }
 
-    // combine vectors
     regular_santa.append(&mut robot_santa);
-
-    // dedup coords
-    regular_santa.sort();
+    regular_santa.sort_unstable();
     regular_santa.dedup();
 
-    // output
-    println!("move count: {:?}", move_count);
-    println!("total houses visited: {:?}", regular_santa.len());
-
-    Ok(())
+    println!("Part 1: {move_count}");
+    println!("Part 2: {:?}", regular_santa.len());
 }
 
-fn navigate(vertical: i16, horizontal: i16, instruction: char) -> (i16, i16) {
-  // take current up_down left_right for each persona, and current move value
-  // apply move and return coords
+fn get_coords(vec: &Vec<(i16, i16)>) -> (i16, i16) {
+    vec[vec.len() - 1]
+}
 
-  let mut vertical: i16 = vertical;
-  let mut horizontal: i16 = horizontal;
+fn navigate(mut vertical: i16, mut horizontal: i16, instruction: char) -> (i16, i16) {
+    match instruction {
+        '^' => vertical += 1,
+        'v' => vertical -= 1,
+        '<' => horizontal += 1,
+        '>' => horizontal -= 1,
+        _ => (),
+    }
 
-  if instruction == '^' {
-    vertical += 1;
-  } else if instruction == 'v'  {
-    vertical -= 1;
-  } else if instruction == '<'  {
-    horizontal += 1;
-  } else if instruction == '>' {
-    horizontal -= 1;
-  } else {
-    // nothing
-  };
-
-  (vertical, horizontal)
+    (vertical, horizontal)
 }
