@@ -6,3 +6,4 @@ Cargo.lock
 *.pdb
 input.txt
 demo_input.txt
+.idea/
